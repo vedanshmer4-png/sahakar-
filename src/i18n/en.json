@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Sahakar",
+    "tagline": "A digital service marketplace owned by the people who work on it.",
+    "positioning": "Current gig platforms maximize platform profit. Sahakar maximizes worker prosperity through ownership, profit-sharing, welfare funds, portable reputation, and democratic governance.",
+    "joinWorker": "Join as Worker-Owner",
+    "bookService": "Book a Verified Craftsman",
+    "learnMore": "Learn How It Works",
+    "aboutModel": "Cooperative Model"
+  },
+  "nav": {
+    "home": "Home",
+    "howItWorks": "How Sahakar Works",
+    "services": "Services Directory",
+    "onboarding": "Become a Worker",
+    "forCooperatives": "For Cooperatives",
+    "about": "Our Model",
+    "dashboard": "Prosperity Dashboard",
+    "passport": "Reputation Passport",
+    "jobs": "My Jobs & Teams",
+    "community": "Community Marketplace",
+    "governance": "Governance & Ballots",
+    "welfare": "Welfare Fund",
+    "customer": "Customer Flow"
+  },
+  "stats": {
+    "workers": "Worker-Owners",
+    "welfare": "Welfare Pool",
+    "districts": "Districts Active"
+  }
+}
