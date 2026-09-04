@@ -8,14 +8,19 @@ export default function LanguageBridge() {
   const location = useLocation();
 
   useEffect(() => {
-    const currentLang = i18n.language || 'en';
-    
-    // Initial run
+    const currentLang = i18n.language || localStorage.getItem('sahakar_language') || 'en';
+    document.documentElement.lang = currentLang;
+
+    // Direct run
     translateDOM(document.body, currentLang);
 
-    // MutationObserver to translate any newly mounted nodes (modals, route changes, data loads)
+    // Debounced observer for route changes, modals, and dynamic data loads
+    let timeoutId = null;
     const observer = new MutationObserver(() => {
-      translateDOM(document.body, currentLang);
+      if (timeoutId) clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        translateDOM(document.body, currentLang);
+      }, 50);
     });
 
     observer.observe(document.body, {
@@ -24,7 +29,10 @@ export default function LanguageBridge() {
       characterData: false
     });
 
-    return () => observer.disconnect();
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      observer.disconnect();
+    };
   }, [i18n.language, location.pathname]);
 
   return null;

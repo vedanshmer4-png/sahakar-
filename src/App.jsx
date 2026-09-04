@@ -64,9 +64,15 @@ export default function App() {
             <Route path="about" element={<AboutModel />} />
             <Route path="for-cooperatives" element={<ForCooperatives />} />
             <Route path="onboarding" element={<Onboarding />} />
+            
+            {/* All Auth, Google Sign In & Sign Up Routes */}
             <Route path="auth" element={<AuthPage />} />
             <Route path="login" element={<AuthPage />} />
             <Route path="signin" element={<AuthPage />} />
+            <Route path="register" element={<AuthPage />} />
+            <Route path="signup" element={<AuthPage />} />
+            <Route path="auth/google" element={<AuthPage />} />
+            <Route path="auth/callback" element={<AuthPage />} />
 
             {/* Customer Portal Routes */}
             <Route element={<RoleRoute allowedRoles={['Customer', 'Federation Admin', 'District Council Member', 'Worker']} />}>
